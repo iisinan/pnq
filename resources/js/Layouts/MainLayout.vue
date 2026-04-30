@@ -53,7 +53,7 @@ const navLinks = [
                 :class="[isScrolled ? 'bg-white/90 backdrop-blur-xl py-3 border-slate-200 shadow-lg shadow-slate-200/50' : 'bg-transparent py-4 border-transparent']"
             >
                 <Link href="/" class="flex items-center">
-                    <Logo />
+                    <Logo class="h-10 md:h-16 w-auto" />
                 </Link>
 
                 <!-- Desktop -->
