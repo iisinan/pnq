@@ -73,12 +73,15 @@ onMounted(() => {
     // Stat counters
     gsap.utils.toArray('.stat-num').forEach((el, i) => {
         const target = stats[i];
-        gsap.from({ val: 0 }, {
+        let counter = { val: 0 };
+        gsap.to(counter, {
             scrollTrigger: { trigger: el, start: 'top 90%' },
             val: target.value,
             duration: 2.5,
             ease: 'expo.out',
-            onUpdate() { el.innerText = Math.round(this.targets()[0].val) + target.suffix; }
+            onUpdate() {
+                el.innerText = Math.round(counter.val) + target.suffix;
+            }
         });
     });
 
