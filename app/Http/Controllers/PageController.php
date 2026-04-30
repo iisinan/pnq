@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Models\TeamMember;
 use App\Models\Certification;
 use App\Models\SiteSetting;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -23,6 +24,7 @@ class PageController extends Controller
             'settings' => $this->getSettings(),
             'services' => Service::where('is_active', true)->orderBy('order')->get(),
             'featuredProjects' => Project::where('is_featured', true)->take(4)->get(),
+            'testimonials' => Testimonial::where('is_visible', true)->get(),
         ]);
     }
 

@@ -7,6 +7,7 @@ use App\Models\Service;
 use App\Models\Project;
 use App\Models\TeamMember;
 use App\Models\Certification;
+use App\Models\Testimonial;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -281,6 +282,51 @@ class DatabaseSeeder extends Seeder
 
         foreach ($certs as $cert) {
             Certification::updateOrCreate(['title' => $cert['title']], $cert);
+        }
+
+        // ========== TESTIMONIALS ==========
+        DB::table('testimonials')->truncate();
+
+        $testimonials = [
+            [
+                'client_name' => 'Alh. Ibrahim Musa',
+                'client_position' => 'Director of Infrastructure',
+                'client_company' => 'Federal Ministry of Works',
+                'content' => 'Price and Quote Limited demonstrated exceptional engineering prowess during the execution of the Southern Kebbi Resettlement Housing scheme. Their attention to detail, adherence to timelines, and unwavering commitment to quality set a new standard for public infrastructure projects.',
+                'rating' => 5,
+            ],
+            [
+                'client_name' => 'Mrs. Folake Adebayo',
+                'client_position' => 'Chief Operations Officer',
+                'client_company' => 'AgriTech Solutions Nigeria',
+                'content' => 'Partnering with P&Q for our precision agriculture infrastructure was a game-changer. Their integration of smart irrigation systems and IoT solutions significantly boosted our yield while optimizing resource usage. Truly visionary engineers.',
+                'rating' => 5,
+            ],
+            [
+                'client_name' => 'Dr. Emmanuel Nwachukwu',
+                'client_position' => 'Head of Renewable Energy',
+                'client_company' => 'DEC/MCC Joint Venture',
+                'content' => 'The design and implementation of the solar power plant training centers at NDA Kaduna were executed flawlessly. Price and Quote’s expertise in renewable energy systems is evident in the robust and scalable solutions they delivered.',
+                'rating' => 5,
+            ],
+            [
+                'client_name' => 'Hajiya Fatima Bello',
+                'client_position' => 'Managing Director',
+                'client_company' => 'Sativa Rice Mill',
+                'content' => 'From the initial design phase to the final monitoring and consultancy, P&Q provided invaluable insights. Their team’s professionalism and technical acumen ensured our milling complex was built to international standards. Highly recommended.',
+                'rating' => 5,
+            ],
+            [
+                'client_name' => 'Mr. Chinedu Okeke',
+                'client_position' => 'Chief Technology Officer',
+                'client_company' => 'Enterprise Cloud Services',
+                'content' => 'We engaged Price and Quote for a comprehensive cybersecurity audit and infrastructure overhaul. Their thoroughness, deep understanding of cloud architecture, and compliance frameworks have fortified our digital assets immensely.',
+                'rating' => 5,
+            ],
+        ];
+
+        foreach ($testimonials as $testimonial) {
+            Testimonial::create($testimonial);
         }
     }
 }
