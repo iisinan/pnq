@@ -111,30 +111,24 @@ onMounted(() => {
                         @click="selectedProject = project"
                         class="group relative rounded-3xl border border-slate-200 overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-slate-200/60 hover:border-slate-300 bg-white">
 
-                        <!-- Visual area — geometric, no stock photo -->
-                        <div class="aspect-[16/9] relative overflow-hidden flex items-center justify-center"
-                             :class="getCategoryBg(project.category)">
-                            <!-- Pattern of dots/shapes -->
-                            <div class="absolute inset-0 grid grid-cols-8 gap-3 p-5 opacity-20 pointer-events-none">
-                                <div v-for="n in 32" :key="n"
-                                     class="aspect-square rounded-full"
-                                     :class="getCategoryAccent(project.category) + '/60'"
-                                     :style="`opacity: ${Math.random() * 0.8 + 0.2}`"></div>
+                        <!-- Visual area — image thumbnail -->
+                        <div class="aspect-[16/9] relative overflow-hidden flex items-center justify-center bg-slate-100">
+                            <img v-if="project.thumbnail" :src="project.thumbnail" :alt="project.title" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <div v-else class="absolute inset-0 flex items-center justify-center bg-slate-100">
+                                <span class="text-xs font-bold uppercase tracking-widest text-slate-300">No Image</span>
                             </div>
-                            <!-- Large symbol -->
-                            <div class="relative z-10 flex flex-col items-center gap-3">
-                                <span class="text-6xl opacity-20 font-black select-none"
-                                      :class="getCategoryAccent(project.category).replace('bg-', 'text-').replace('-500', '-600')">
-                                    {{ patternSymbols[i % patternSymbols.length] }}
-                                </span>
-                                <span class="text-xs font-black uppercase tracking-widest px-4 py-2 rounded-xl border opacity-60"
-                                      :class="`${getCategoryAccent(project.category).replace('bg-', 'border-').replace('-500', '-300')} ${getCategoryAccent(project.category).replace('bg-', 'text-').replace('-500', '-700')}`">
+                            
+                            <!-- Category badge top right -->
+                            <div class="absolute top-4 right-4 z-20">
+                                <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg border bg-white/90 backdrop-blur-sm shadow-sm"
+                                      :class="`${getCategoryAccent(project.category).replace('bg-', 'border-').replace('-500', '-200')} ${getCategoryAccent(project.category).replace('bg-', 'text-').replace('-500', '-700')}`">
                                     {{ project.category }}
                                 </span>
                             </div>
+
                             <!-- Hover overlay -->
-                            <div class="absolute inset-0 bg-slate-900/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-400 backdrop-blur-sm">
-                                <div class="text-white text-sm font-bold flex items-center gap-2">
+                            <div class="absolute inset-0 bg-slate-900/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-400 backdrop-blur-[2px]">
+                                <div class="text-white text-sm font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                                     View Details
                                 </div>
@@ -176,15 +170,17 @@ onMounted(() => {
                         <TransitionChild as="template" enter="duration-500 cubic-bezier(0.16, 1, 0.3, 1)" enter-from="opacity-0 scale-95 translate-y-12" enter-to="opacity-100 scale-100 translate-y-0" leave="duration-300 ease-in" leave-from="opacity-100 scale-100" leave-to="opacity-0 scale-95">
                             <DialogPanel v-if="selectedProject" class="w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-100">
                                 <!-- Visual header -->
-                                <div class="aspect-[21/6] relative flex items-center justify-center overflow-hidden" :class="getCategoryBg(selectedProject.category)">
-                                    <div class="absolute inset-0 grid grid-cols-12 gap-3 p-8 opacity-15 pointer-events-none">
+                                <div class="aspect-[21/6] relative flex items-center justify-center overflow-hidden bg-slate-900">
+                                    <img v-if="selectedProject.thumbnail" :src="selectedProject.thumbnail" :alt="selectedProject.title" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-80 pointer-events-none"></div>
+                                    
+                                    <!-- Fallback pattern if no image -->
+                                    <div v-if="!selectedProject.thumbnail" class="absolute inset-0 grid grid-cols-12 gap-3 p-8 opacity-15 pointer-events-none">
                                         <div v-for="n in 48" :key="n" class="aspect-square rounded-full" :class="getCategoryAccent(selectedProject.category)"></div>
                                     </div>
-                                    <div class="relative z-10 text-center">
-                                        <span class="text-8xl opacity-20 font-black select-none" :class="getCategoryAccent(selectedProject.category).replace('bg-', 'text-').replace('-500', '-600')">◆</span>
-                                    </div>
-                                    <button @click="selectedProject = null" class="absolute top-5 right-5 w-10 h-10 bg-white/90 hover:bg-white rounded-xl flex items-center justify-center shadow-md transition-all active:scale-90 group">
-                                        <svg class="w-5 h-5 text-slate-500 group-hover:text-slate-900 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+                                    
+                                    <button @click="selectedProject = null" class="absolute top-5 right-5 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center shadow-md transition-all active:scale-90 group z-20">
+                                        <svg class="w-5 h-5 text-white transition-transform group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
                                     </button>
                                 </div>
 
