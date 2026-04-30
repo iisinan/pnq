@@ -138,7 +138,7 @@ class DatabaseSeeder extends Seeder
                 'year' => 2020,
                 'description' => 'Comprehensive design, project monitoring, and consultancy services for a state-of-the-art rice milling facility.',
                 'content' => 'This project encompassed full architectural, structural, and engineering designs, technical drawings, and detailed project execution frameworks. Price and Quote Limited provided strategic consultancy and continuous project monitoring to ensure quality and milestone compliance.',
-                'thumbnail' => 'https://images.unsplash.com/photo-1536633101166-7918ba6a44ec?q=80&w=2070&auto=format&fit=crop',
+                'thumbnail' => '/images/rice_mill.png',
                 'is_featured' => true,
             ],
             [
@@ -160,7 +160,7 @@ class DatabaseSeeder extends Seeder
                 'year' => 2022,
                 'description' => 'Consultancy and engineering design for the Agriculture Demonstration Center at Abuja Technology Village.',
                 'content' => 'Project scope included architectural and engineering designs, Environmental Impact Assessment (EIA) support, and quality assurance monitoring to establish a premier agricultural research and demonstration hub.',
-                'thumbnail' => 'https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1974&auto=format&fit=crop',
+                'thumbnail' => '/images/agriculture.png',
                 'is_featured' => true,
             ],
             [
@@ -182,7 +182,7 @@ class DatabaseSeeder extends Seeder
                 'year' => 2022,
                 'description' => 'Design and monitoring for specialized workshop and training centers at NDA Kaduna and UNIMAID solar power plants.',
                 'content' => 'Provision of design, quality assurance, and handover support for training facilities located at the Nigerian Defence Academy and University of Maiduguri, supporting the sustainable energy transition.',
-                'thumbnail' => 'https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?q=80&w=2070&auto=format&fit=crop',
+                'thumbnail' => '/images/solar.png',
                 'is_featured' => true,
             ],
         ];

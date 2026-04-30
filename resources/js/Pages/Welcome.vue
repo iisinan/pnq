@@ -26,8 +26,8 @@ const coreServices = computed(() => {
 const getServiceImage = (slug) => {
     const images = {
         'constructions': 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop',
-        'agriculture': 'https://images.unsplash.com/photo-1592982537447-6f2a6a0a5063?q=80&w=800&auto=format&fit=crop',
-        'renewable-energy': 'https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?q=80&w=800&auto=format&fit=crop',
+        'agriculture': '/images/agriculture.png',
+        'renewable-energy': '/images/renewable.png',
         'it-consultancy': 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop',
         'software-development': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop',
     };
