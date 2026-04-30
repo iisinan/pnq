@@ -23,6 +23,17 @@ const coreServices = computed(() => {
     return filtered.length ? filtered : props.services.slice(0, 3);
 });
 
+const getServiceImage = (slug) => {
+    const images = {
+        'constructions': 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop',
+        'agriculture': 'https://images.unsplash.com/photo-1592982537447-6f2a6a0a5063?q=80&w=800&auto=format&fit=crop',
+        'renewable-energy': 'https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?q=80&w=800&auto=format&fit=crop',
+        'it-consultancy': 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop',
+        'software-development': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop',
+    };
+    return images[slug] || 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop';
+};
+
 const stats = [
     { label: 'Projects Delivered', value: 20, suffix: '+' },
     { label: 'Years of Experience', value: 12, suffix: '' },
@@ -222,14 +233,23 @@ onMounted(() => {
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div v-for="(service, i) in coreServices" :key="i"
                         @mouseenter="activeService = i"
-                        class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 p-10 cursor-default transition-all duration-500"
+                        class="reveal group relative overflow-hidden rounded-3xl border border-slate-200 cursor-default transition-all duration-500 flex flex-col"
                         :class="[activeService === i ? 'bg-slate-900 border-slate-900 shadow-2xl shadow-slate-900/20' : 'bg-white hover:border-primary-200']">
 
-                        <!-- Background glow on active -->
-                        <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full blur-3xl transition-all duration-700 pointer-events-none"
-                             :class="activeService === i ? 'bg-primary-500/20 opacity-100' : 'opacity-0'"></div>
+                        <!-- Image -->
+                        <div class="h-48 overflow-hidden relative flex-shrink-0">
+                            <img :src="getServiceImage(service.slug)" :alt="service.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-slate-900/20 transition-colors duration-500"
+                                 :class="activeService === i ? 'bg-slate-900/60 mix-blend-multiply' : ''"></div>
+                        </div>
 
-                        <!-- Icon -->
+                        <!-- Content wrapper -->
+                        <div class="p-10 relative flex-grow flex flex-col">
+                            <!-- Background glow on active -->
+                            <div class="absolute top-0 right-0 w-40 h-40 rounded-full blur-3xl transition-all duration-700 pointer-events-none"
+                                 :class="activeService === i ? 'bg-primary-500/20 opacity-100' : 'opacity-0'"></div>
+    
+                            <!-- Icon -->
                         <div class="relative w-14 h-14 mb-8 rounded-2xl flex items-center justify-center transition-all duration-500"
                              :class="activeService === i ? 'bg-primary-500' : 'bg-primary-50'">
                             <svg class="w-7 h-7 transition-colors duration-500"
@@ -243,17 +263,18 @@ onMounted(() => {
                         <div class="text-xs font-black tracking-widest mb-4 transition-colors duration-500"
                              :class="activeService === i ? 'text-primary-400' : 'text-slate-300'">0{{ i + 1 }}</div>
 
-                        <!-- Content -->
-                        <h3 class="text-2xl font-bold mb-3 tracking-tight transition-colors duration-500"
-                            :class="activeService === i ? 'text-white' : 'text-slate-900'">{{ service.title }}</h3>
-                        <p class="text-sm leading-relaxed transition-colors duration-500"
-                           :class="activeService === i ? 'text-slate-400' : 'text-slate-500'">{{ service.description }}</p>
-
-                        <!-- Arrow -->
-                        <div class="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-all duration-500"
-                             :class="activeService === i ? 'text-primary-400 translate-x-0 opacity-100' : 'text-transparent -translate-x-2 opacity-0'">
-                            Explore
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            <!-- Content -->
+                            <h3 class="text-2xl font-bold mb-3 tracking-tight transition-colors duration-500"
+                                :class="activeService === i ? 'text-white' : 'text-slate-900'">{{ service.title }}</h3>
+                            <p class="text-sm leading-relaxed transition-colors duration-500 flex-grow"
+                               :class="activeService === i ? 'text-slate-400' : 'text-slate-500'">{{ service.description }}</p>
+    
+                            <!-- Arrow -->
+                            <div class="mt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest transition-all duration-500"
+                                 :class="activeService === i ? 'text-primary-400 translate-x-0 opacity-100' : 'text-transparent -translate-x-2 opacity-0'">
+                                Explore
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                            </div>
                         </div>
                     </div>
                 </div>
