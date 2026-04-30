@@ -81,7 +81,7 @@ const stats = [
                     <span class="text-xs font-bold tracking-widest uppercase text-primary-600">Price and Quote — Since 2014</span>
                 </div>
 
-                <h1 class="text-6xl md:text-9xl font-black tracking-tighter leading-[0.9] mb-8 overflow-hidden text-slate-900">
+                <h1 class="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9] mb-8 overflow-hidden text-slate-900">
                     <div class="flex flex-wrap justify-center overflow-hidden">
                         <span v-for="(char, i) in (settings?.hero_title_line_1 || 'ENGINEERING').split('')" :key="'a'+i" class="char inline-block">{{ char }}</span>
                     </div>
