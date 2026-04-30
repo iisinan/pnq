@@ -140,7 +140,7 @@ onMounted(() => {
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-500"></span>
                     </span>
-                    <span class="text-xs font-bold tracking-[0.18em] uppercase text-slate-500">{{ settings?.company_name || 'Price and Quote' }} — Est. 2014</span>
+                    <span class="text-xs font-bold tracking-[0.18em] uppercase text-slate-500">{{ settings?.company_name || 'Price and Quote Ltd' }} — Est. 2014</span>
                 </div>
 
                 <!-- Title -->
