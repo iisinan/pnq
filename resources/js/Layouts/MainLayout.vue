@@ -153,10 +153,6 @@ const navLinks = [
                                 <span class="text-slate-900 font-medium">info@priceandquote.com</span>
                             </li>
                             <li class="flex flex-col">
-                                <span class="text-xs font-bold text-slate-400 uppercase mb-1">Phone</span>
-                                <span class="text-slate-900 font-medium">08033657989</span>
-                            </li>
-                            <li class="flex flex-col">
                                 <span class="text-xs font-bold text-slate-400 uppercase mb-1">Location</span>
                                 <span class="text-slate-900 font-medium">CBD, Abuja, Nigeria</span>
                             </li>
