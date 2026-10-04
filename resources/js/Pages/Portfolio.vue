@@ -207,7 +207,13 @@ onMounted(() => {
                                             <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Sector</p>
                                             <p class="text-base font-bold text-slate-900">{{ selectedProject.category }}</p>
                                         </div>
-                                        <div class="pt-4">
+                                        <div class="pt-4 flex flex-col gap-3">
+                                            <a v-if="selectedProject.category === 'Software Development' && selectedProject.content?.match(/https?:\/\/[^\s\)]+/)"
+                                               :href="selectedProject.content?.match(/https?:\/\/[^\s\)]+/)[0]"
+                                               target="_blank"
+                                               class="block w-full border border-slate-900 text-slate-900 py-4 rounded-2xl font-bold text-sm text-center hover:bg-slate-50 transition-all duration-300 active:scale-95">
+                                                Visit Website
+                                            </a>
                                             <Link href="/contact" @click="selectedProject = null"
                                                 class="block w-full bg-slate-900 text-white py-4 rounded-2xl font-bold text-sm text-center hover:bg-primary-500 transition-all duration-300 active:scale-95">
                                                 Inquire About This Project
