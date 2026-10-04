@@ -40,7 +40,7 @@ const navLinks = [
 </script>
 
 <template>
-    <div class="min-h-screen bg-white text-slate-900 selection:bg-primary-500/20 selection:text-primary-700 font-sans">
+    <div class="min-h-screen bg-white text-slate-900 selection:bg-primary-500/20 selection:text-primary-700 font-sans overflow-x-hidden">
         <Head :title="$page.props.title ? `${$page.props.title} | Price and Quote` : 'Price and Quote - Engineering Excellence'" />
 
         <!-- Navigation -->
@@ -124,7 +124,7 @@ const navLinks = [
         </main>
 
         <!-- Footer -->
-        <footer class="bg-slate-50 border-t border-slate-100 py-24 px-6 md:px-12 relative overflow-hidden">
+        <footer class="bg-slate-50 border-t border-slate-100 py-16 md:py-24 px-6 md:px-12 relative overflow-hidden">
             <div class="max-w-7xl mx-auto relative z-10">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-16">
                     <div class="col-span-1 md:col-span-2">

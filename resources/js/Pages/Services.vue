@@ -148,7 +148,7 @@ onMounted(() => {
         </section>
 
         <!-- ═══ CTA ═══ -->
-        <section class="py-24 px-6">
+        <section class="py-16 md:py-24 px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="reveal relative overflow-hidden rounded-3xl bg-slate-900 p-14 md:p-24 text-center">
                     <div class="absolute top-8 right-8 w-32 h-32 border border-white/5 rounded-2xl rotate-12 pointer-events-none"></div>

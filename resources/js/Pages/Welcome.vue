@@ -244,7 +244,7 @@ onMounted(() => {
                         </div>
 
                         <!-- Content wrapper -->
-                        <div class="p-10 relative flex-grow flex flex-col">
+                        <div class="p-6 md:p-10 relative flex-grow flex flex-col">
                             <!-- Background glow on active -->
                             <div class="absolute top-0 right-0 w-40 h-40 rounded-full blur-3xl transition-all duration-700 pointer-events-none"
                                  :class="activeService === i ? 'bg-primary-500/20 opacity-100' : 'opacity-0'"></div>

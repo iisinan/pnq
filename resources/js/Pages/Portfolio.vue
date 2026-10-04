@@ -149,7 +149,7 @@ onMounted(() => {
                 </TransitionGroup>
 
                 <!-- Empty state -->
-                <div v-if="filteredProjects.length === 0" class="py-32 text-center reveal">
+                <div v-if="filteredProjects.length === 0" class="py-20 md:py-32 text-center reveal">
                     <div class="inline-block p-12 bg-slate-50 rounded-3xl border border-slate-100">
                         <div class="text-6xl mb-6 opacity-20">◆</div>
                         <p class="text-xl font-bold text-slate-400 mb-4">No projects in this sector yet.</p>

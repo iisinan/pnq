@@ -101,7 +101,7 @@ onMounted(() => {
                 </div>
 
                 <!-- Empty state -->
-                <div v-if="!team || team.length === 0" class="text-center py-24">
+                <div v-if="!team || team.length === 0" class="text-center py-16 md:py-24">
                     <div class="text-6xl mb-6 opacity-20 select-none">◆</div>
                     <p class="text-slate-400 font-bold">Team data loading...</p>
                 </div>
@@ -109,7 +109,7 @@ onMounted(() => {
         </section>
 
         <!-- ═══ TIMELINE ═══ -->
-        <section class="py-32 px-6">
+        <section class="py-20 md:py-32 px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-20 reveal">
                     <p class="text-xs font-bold tracking-[0.2em] uppercase text-primary-500 mb-4">Our Journey</p>
@@ -159,7 +159,7 @@ onMounted(() => {
         </section>
 
         <!-- ═══ JOIN CTA ═══ -->
-        <section class="py-24 px-6">
+        <section class="py-16 md:py-24 px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="reveal relative overflow-hidden rounded-3xl bg-slate-900 p-14 md:p-24 text-center">
                     <div class="absolute top-8 right-8 w-32 h-32 border border-white/5 rounded-2xl rotate-12 pointer-events-none"></div>

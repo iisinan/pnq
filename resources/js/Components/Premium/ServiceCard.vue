@@ -14,7 +14,7 @@ const isExpanded = ref(false);
 
 <template>
     <div
-        class="bg-white p-10 group transition-all duration-500 cursor-pointer overflow-hidden relative border border-slate-200 rounded-3xl hover:border-primary-500/30 hover:shadow-xl hover:shadow-primary-500/10"
+        class="bg-white p-6 md:p-10 group transition-all duration-500 cursor-pointer overflow-hidden relative border border-slate-200 rounded-3xl hover:border-primary-500/30 hover:shadow-xl hover:shadow-primary-500/10"
         :class="[isExpanded ? 'ring-2 ring-primary-500/30 scale-[1.02] shadow-xl' : 'hover:-translate-y-2']"
         @click="isExpanded = !isExpanded"
     >

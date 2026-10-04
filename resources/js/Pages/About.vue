@@ -91,7 +91,7 @@ onMounted(() => {
         <!-- ═══ STATS ROW ═══ -->
         <section class="px-6 py-0">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100 border border-slate-100 rounded-3xl overflow-hidden -mt-6 relative z-20 shadow-xl shadow-slate-100/80">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100 border border-slate-100 rounded-3xl overflow-hidden -mt-6 relative z-20 shadow-xl shadow-slate-100/80">
                     <div v-for="stat in stats" :key="stat.label"
                         class="reveal group bg-white px-8 py-10 flex items-center gap-5 hover:bg-primary-500 transition-all duration-500">
                         <div class="w-12 h-12 rounded-xl bg-primary-50 group-hover:bg-white/20 flex items-center justify-center flex-shrink-0 transition-all duration-500">
@@ -109,7 +109,7 @@ onMounted(() => {
         </section>
 
         <!-- ═══ MISSION ═══ -->
-        <section class="py-32 px-6">
+        <section class="py-20 md:py-32 px-6">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div class="reveal">
                     <div class="w-10 h-1 bg-primary-500 mb-8 rounded-full"></div>
@@ -138,7 +138,7 @@ onMounted(() => {
                         <div class="absolute inset-0 rounded-3xl"
                              style="background-image: linear-gradient(rgba(58,190,249,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(58,190,249,0.08) 1px, transparent 1px); background-size: 30px 30px; border: 1px solid rgb(241,245,249); border-radius: 24px;"></div>
                         <!-- Floating elements -->
-                        <div class="absolute top-8 left-8 right-8 bottom-8 bg-white rounded-2xl border border-slate-100 shadow-xl flex flex-col items-center justify-center gap-8 p-10">
+                        <div class="absolute top-4 sm:top-8 left-4 sm:left-8 right-4 sm:right-8 bottom-4 sm:bottom-8 bg-white rounded-2xl border border-slate-100 shadow-xl flex flex-col items-center justify-center gap-6 sm:gap-8 p-6 md:p-10">
                             <div class="text-center">
                                 <div class="text-6xl font-black text-slate-900 tracking-tighter">12+</div>
                                 <div class="text-sm font-bold uppercase tracking-widest text-slate-400 mt-1">Years of Excellence</div>
@@ -172,7 +172,7 @@ onMounted(() => {
         </section>
 
         <!-- ═══ CERTIFICATIONS ═══ -->
-        <section class="py-24 px-6 bg-slate-50/70 border-y border-slate-100">
+        <section class="py-16 md:py-24 px-6 bg-slate-50/70 border-y border-slate-100">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 reveal">
                     <p class="text-xs font-bold tracking-[0.2em] uppercase text-secondary-500 mb-4">Trusted & Verified</p>
@@ -197,7 +197,7 @@ onMounted(() => {
         </section>
 
         <!-- ═══ LEADERSHIP TEAM ═══ -->
-        <section class="py-32 px-6">
+        <section class="py-20 md:py-32 px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal">
                     <div>

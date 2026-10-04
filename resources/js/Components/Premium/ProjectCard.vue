@@ -43,15 +43,15 @@ const isOpen = ref(false);
                 <div class="fixed inset-0 overflow-y-auto">
                     <div class="flex min-h-full items-center justify-center p-6 md:p-12">
                         <TransitionChild as="template" enter="duration-700 cubic-bezier(0.16, 1, 0.3, 1)" enter-from="opacity-0 scale-95 translate-y-20" enter-to="opacity-100 scale-100 translate-y-0" leave="duration-300 ease-in" leave-from="opacity-100 scale-100 translate-y-0" leave-to="opacity-0 scale-95 translate-y-20">
-                            <DialogPanel class="w-full max-w-6xl transform overflow-hidden rounded-3xl bg-white p-10 md:p-16 text-left shadow-2xl shadow-slate-200/50 transition-all border border-slate-200">
-                                <div class="flex justify-between items-start mb-12">
+                            <DialogPanel class="w-full max-w-6xl transform overflow-hidden rounded-3xl bg-white p-6 sm:p-10 md:p-16 text-left shadow-2xl shadow-slate-200/50 transition-all border border-slate-200">
+                                <div class="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-start gap-6 sm:gap-10 mb-12">
                                     <div class="max-w-2xl">
                                         <div class="text-sm font-black uppercase tracking-widest text-primary-500 mb-3">{{ project.category }}</div>
                                         <DialogTitle as="h3" class="text-4xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[0.9]">
                                             {{ project.title }}
                                         </DialogTitle>
                                     </div>
-                                    <button @click="isOpen = false" class="p-4 rounded-2xl border border-slate-200 hover:bg-slate-50 transition-all group">
+                                    <button @click="isOpen = false" class="p-4 rounded-2xl border border-slate-200 hover:bg-slate-50 transition-all group self-end sm:self-auto">
                                         <svg class="w-6 h-6 text-slate-400 group-hover:text-primary-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                                         </svg>
