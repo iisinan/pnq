@@ -68,6 +68,28 @@ class ProjectSeeder extends Seeder
                 'thumbnail' => '/images/solar.png',
                 'is_featured' => true,
             ],
+            [
+                'title' => 'Irshad Platform',
+                'slug' => 'irshad-platform',
+                'category' => 'Software Development',
+                'client_name' => 'Irshad',
+                'year' => 2024,
+                'description' => 'Development of a comprehensive digital platform. Visit: https://iirshad.com/',
+                'content' => 'End-to-end software development and deployment of the Irshad platform (https://iirshad.com/). The project involved full-stack web development, API integrations, and scalable cloud infrastructure deployment to support a seamless user experience.',
+                'thumbnail' => 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop',
+                'is_featured' => true,
+            ],
+            [
+                'title' => 'ACETEL Thesis Monitoring System',
+                'slug' => 'acetel-tms',
+                'category' => 'Software Development',
+                'client_name' => 'ACETEL / NOU',
+                'year' => 2023,
+                'description' => 'Thesis Monitoring System for the National Open University of Nigeria (NOUN). Visit: https://aceteltms.nou.edu.ng/',
+                'content' => 'Design and development of a robust Thesis Monitoring System (https://aceteltms.nou.edu.ng/) for ACETEL at the National Open University of Nigeria. The platform streamlines thesis submission, tracking, and evaluation for students and faculty.',
+                'thumbnail' => 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop',
+                'is_featured' => true,
+            ],
         ];
 
         foreach ($projects as $project) {
