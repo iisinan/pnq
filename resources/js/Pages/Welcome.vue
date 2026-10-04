@@ -18,7 +18,7 @@ const activeService = ref(0);
 
 const coreServices = computed(() => {
     const filtered = props.services.filter(s =>
-        ['Agriculture', 'Constructions', 'Renewable Energy'].includes(s.title)
+        ['Software Development', 'Constructions', 'Renewable Energy'].includes(s.title)
     );
     return filtered.length ? filtered : props.services.slice(0, 3);
 });
@@ -196,9 +196,9 @@ onMounted(() => {
         </div>
 
         <!-- ═══ STATS ═══ -->
-        <section class="py-24 px-6">
+        <section class="py-16 md:py-24 px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100 rounded-3xl overflow-hidden border border-slate-100">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100 rounded-3xl overflow-hidden border border-slate-100">
                     <div v-for="(stat, i) in stats" :key="stat.label"
                         class="reveal group bg-white px-10 py-12 text-center hover:bg-primary-50/60 transition-colors duration-500">
                         <div class="stat-num text-5xl md:text-6xl font-black text-slate-900 mb-2 group-hover:text-primary-500 transition-colors duration-500 tabular-nums">{{ stat.value }}{{ stat.suffix }}</div>
@@ -209,7 +209,7 @@ onMounted(() => {
         </section>
 
         <!-- ═══ CORE COMPETENCIES ═══ -->
-        <section class="py-24 px-6 relative overflow-hidden">
+        <section class="py-16 md:py-24 px-6 relative overflow-hidden">
             <div class="absolute right-0 top-0 w-[600px] h-[600px] bg-primary-400/5 rounded-full blur-[100px] pointer-events-none"></div>
             <div class="max-w-7xl mx-auto">
                 <!-- Header -->
@@ -282,7 +282,7 @@ onMounted(() => {
         </section>
 
         <!-- ═══ TESTIMONIALS ═══ -->
-        <section class="py-24 px-6 bg-slate-50/50 border-t border-slate-100" v-if="testimonials && testimonials.length > 0">
+        <section class="py-16 md:py-24 px-6 bg-slate-50/50 border-t border-slate-100" v-if="testimonials && testimonials.length > 0">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 reveal">
                     <p class="text-xs font-bold tracking-[0.2em] uppercase text-primary-500 mb-4">Client Feedback</p>
@@ -318,7 +318,7 @@ onMounted(() => {
         </section>
 
         <!-- ═══ CTA ═══ -->
-        <section class="py-24 px-6">
+        <section class="py-16 md:py-24 px-6">
             <div class="max-w-7xl mx-auto">
                 <div class="reveal relative overflow-hidden rounded-3xl bg-slate-900 p-14 md:p-24">
                     <!-- Decorative elements -->
